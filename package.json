@@ -5,9 +5,7 @@
   "main": "src/index.ts",
   "scripts": {
     "dev": "nodemon src/index.ts",
-    "start": "ts-node --files ./src/index.ts",
-    "serve": "netlify-lambda serve src",
-    "build": "netlify-lambda build src"
+    "start": "ts-node --files ./src/index.ts"
   },
   "repository": {
     "type": "git",
