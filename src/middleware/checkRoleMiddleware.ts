@@ -1,6 +1,8 @@
 import express from "express";
 import Jwt, { JwtPayload } from "jsonwebtoken";
 import ApiError from "../error/ApiError";
+import dotenv from 'dotenv';
+dotenv.config();
 
 export default function (role: string) {
   
@@ -15,7 +17,7 @@ export default function (role: string) {
         throw ApiError.forbidden("Unauthorized");
       }
 
-      const decode = Jwt.verify(token, "random_secret_key6") as JwtPayload;
+      const decode = Jwt.verify(token, process.env.JWTSALT) as JwtPayload;
 
       if (decode.includes(role)) {
         throw ApiError.forbidden("No access");

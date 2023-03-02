@@ -21,6 +21,7 @@ declare global {
         PGPASSWORD: string;
         PGHOST: string;
         PGPORT: number;
+        JWTSALT: string;
       }
     }
   }
