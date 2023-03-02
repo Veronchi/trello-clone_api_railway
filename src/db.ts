@@ -1,13 +1,15 @@
 import { Sequelize } from "sequelize";
+import dotenv from 'dotenv';
+dotenv.config();
 
 const sequelize = new Sequelize(
-  "railway",
-  "postgres",
-  "rnkJHAhK6zgoK0RupThS",
+  process.env.PGDATABASE,
+  process.env.PGUSER,
+  process.env.PGPASSWORD,
   {
     dialect: "postgres",
-    host: "containers-us-west-183.railway.app",
-    port: 7935,
+    host: process.env.PGHOST,
+    port: process.env.PGPORT,
   }
 );
 
